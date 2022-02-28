@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="script.js"></script>
+</head>
+
+<body ng-app='myapp' ng-controller='mycontroller'>
+    <div class="jumbotron jumbotron-fluid pb-1">
+
+        <div class="container">
+            <h1 class='text-center mb-4'>Corona Virus Worldwide Statistics</h1>
+            <p>The COVID-19 pandemic, also known as the coronavirus pandemic, is an ongoing global pandemic of coronavirus disease 2019 (COVID‑19), caused by severe acute respiratory syndrome coronavirus 2 (SARS‑CoV‑2).[1] The outbreak was first identified
+                in Wuhan, China, in December 2019.[4][6] The World Health Organization declared the outbreak a Public Health Emergency of International Concern on 30 January 2020, and a pandemic on 11 March.[7][8] As of 27 June 2020, more than 9.86 million
+                cases of COVID-19 have been reported in more than 188 countries and territories, resulting in more than 495,000 deaths; more than 4.98 million people have recovered</p>
+
+            <div class="row text-center">
+                <div class="col-md-4 bg-warning text-black py-3">
+                    <h3>Confirmed </h3>
+                    <h5>{{alldata.confirmed.value}}</h5>
+                </div>
+                <div class="col-md-4 bg-success text-white py-3">
+                    <h3>Recovered </h3>
+                    <h5>{{alldata.recovered.value}}</h5>
+                </div>
+                <div class="col-md-4 bg-danger text-white py-3">
+                    <h3>Deaths </h3>
+                    <h5>{{alldata.deaths.value}}</h5>
+                </div>
+            </div>
+
+            <div class="form-group pt-3">
+                <input type="text" class="form-control" ng-model='country' ng-change='countrywise()'>
+            </div>
+        </div>
+        <div class="container" ng-if='country'>
+            <h1 class='text-center'>{{country}} Statistics</h1>
+            <div class="row text-center">
+                <div class="col-md-4 bg-warning text-black py-3">
+                    <h3>Confirmed </h3>
+                    <h5>{{alldataCountryWise.confirmed.value}}</h5>
+                </div>
+                <div class="col-md-4 bg-success text-white py-3">
+                    <h3>Recovered </h3>
+                    <h5>{{alldataCountryWise.recovered.value}}</h5>
+                </div>
+                <div class="col-md-4 bg-danger text-white py-3">
+                    <h3>Deaths </h3>
+                    <h5>{{alldataCountryWise.deaths.value}}</h5>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+</body>
+
+</html>
